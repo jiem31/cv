@@ -156,13 +156,20 @@ article {
 article i {
     margin-right: 20px;
 }
-section {
+.education-details, .experience-details {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 5fr 7fr;
     grid-template-areas: 
         "left right";
-    grid-column-gap: 10px;
+    grid-column-gap: 30px;
     margin: 30px 0;
+}
+.recommandations-details {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-template-areas: 
+        "left right";
+    grid-column-gap: 30px;
 }
 .left {
     grid-area: left;
@@ -176,13 +183,6 @@ section {
 }
 .subtitle {
     font-weight: 500;
-}
-#recommandations section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "left right";
-    grid-column-gap: 10px;
 }
 .manager {
     text-transform: uppercase;
@@ -199,36 +199,35 @@ section {
     xl | 1200px |    +px | Large screens, TV etc...
 */
 
+@media screen and (max-width: 1199px) {
+    .education-details, .experience-details {
+        display: grid;
+        grid-template-columns: 5fr 7fr;
+        grid-template-areas:
+            "left right";
+    }
+}
 @media screen and (max-width: 991px) {
     #page {
         display: grid;
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 5fr 7fr;
         grid-template-areas: 
-                "picture header"
-                "aside main";    
+            "picture header"
+            "aside main";
+        grid-column-gap: 65px;
     }
-    section {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "left" 
-            "right";
-        grid-column-gap: 20px;
+    .education-details, .experience-details, .recommandations-details {
+        display: flex;
+        flex-direction: column;
     }
-    .right p, ul {
-        margin-left: 40px;
+    .education-details .right, .experience-details .right {
+        margin-left : 40px;
     }
 }
-
 @media screen and (max-width: 767px) {
     #page {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-                "picture"
-                "header"
-                "aside"
-                "main";
+        display: flex;
+        flex-direction: column;
     }
     #photo {
         width: 50%;
@@ -236,70 +235,26 @@ section {
     }
     header {
         background-color: #FBCB07;
-    }
-    h1 {
-        margin-top: 10px;
         text-align: center;
     }
-    #firstname {
+   h1 {
+        margin-top: 10px;
+   }
+   #firstname, #lastname{
         color: #1A1A1A;
+        font-size: 75%;
     }
     h2 {
-        text-align: center;
-        padding-bottom: 25px;
+        color: #1A1A1A;
+        margin-bottom: 20px;
     }
     main {
         margin-left: 40px;
-        margin-right: 40px;
     }
-    section {
-        display: grid;
-        grid-template-columns: 2fr 3fr;
-        grid-template-areas: 
-            "left right";
-        grid-column-gap: 10px;
+    .recommandations-details {
+        margin-left:40px;
     }
-}
-
-@media screen and (max-width: 575px) {
-    #page {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-                "picture"
-                "header"
-                "aside"
-                "main";
-    }
-    #photo {
-        width: 50%;
-        height: 50%;
-    }
-    header {
-        background-color: #FBCB07;
-    }
-    h1 {
-        margin-top: 10px;
-        font-size: 3rem;
-        text-align: center;
-    }
-    #firstname {
-        color: #1A1A1A;
-    }
-    h2 {
-        font-size: 1.4rem;
-        text-align: center;
-        padding-bottom: 25px;
-    }
-    main {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-    section {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "left" 
-            "right";
+    .recommandations-details .left,.recommandations-details .right {
+        margin-bottom:40px;
     }
 }
