@@ -11,6 +11,21 @@
 body {
     box-sizing: border-box;
 }
+p {
+    padding: 3px 0;
+}
+li {
+    list-style-type: square;
+    margin-left: 16px;
+}
+a {
+    text-decoration: none
+}
+
+a:hover {
+    font-size: bold;
+    text-decoration: underline;
+}
 
 /*
     PAGE
@@ -23,13 +38,6 @@ body {
         "picture header"
         "aside main";
     grid-column-gap: 65px;
-}
-p {
-    padding: 3px 0;
-}
-li {
-    list-style-type: square;
-    margin-left: 16px;
 }
 
 /*
@@ -143,6 +151,7 @@ main i {
 }
 article {
     margin: 20px 0;
+    margin-bottom: 10px;
 }
 article i {
     margin-right: 20px;
@@ -152,7 +161,8 @@ section {
     grid-template-columns: 2fr 3fr;
     grid-template-areas: 
         "left right";
-    grid-column-gap: 20px;
+    grid-column-gap: 10px;
+    margin: 30px 0;
 }
 .left {
     grid-area: left;
@@ -167,15 +177,26 @@ section {
 .subtitle {
     font-weight: 500;
 }
+#recommandations section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "left right";
+    grid-column-gap: 10px;
+}
+.manager {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
 
 /* 
     MEDIA QUERIES FOR RESPONSIVENESS :
-    ---+--------+-------
-    xs |    0px |  575px |
-    sm |  576px |  767px 
-    md |  768px |  991px
-    lg |  992px | 1199px
-    xl | 1200px |    +px
+    ---+--------+--------+------------
+    xs |    0px |  575px | Smartphones (portrait)
+    sm |  576px |  767px | Smartphones (landscape)
+    md |  768px |  991px | Tablets
+    lg |  992px | 1199px | Small screens
+    xl | 1200px |    +px | Large screens, TV etc...
 */
 
 @media screen and (max-width: 991px) {
@@ -251,8 +272,8 @@ section {
                 "main";
     }
     #photo {
-        width: 40%;
-        height: 40%;
+        width: 50%;
+        height: 50%;
     }
     header {
         background-color: #FBCB07;
